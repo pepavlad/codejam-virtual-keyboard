@@ -105,7 +105,6 @@ window.onload = function() {
             leftAlt = true;
         }
         if (event.code === 'ShiftLeft') {
-            if(rightCtrl || leftAlt) document.getElementById('ControlLeft').classList.add('pressed');
             const currentKeys = isEng === 1 ? engKeysShift : rusKeysShift;
             init(currentKeys);
             document.getElementById('ShiftLeft').classList.add('pressed');
@@ -232,8 +231,6 @@ window.onload = function() {
     document.addEventListener('mousedown', (e)=>{
         if(e.target.classList.contains('key')){
             e.target.classList.add('pressed');
-            console.log(e.target.innerHTML);
-            
             if(event.code === 'ArrowLeft') outStr += '◀';
             if(event.code === 'ArrowUp') outStr += '▲';
             if(event.code === 'ArrowDown') outStr += '▼';
@@ -270,9 +267,10 @@ window.onload = function() {
                     outStr += '';
                     break;
                 default:
-                    if(e.target.innerHTML == '&lt;') outStr += '<';
-                    else if(e.target.innerHTML == '&gt;') outStr += '>';
-                    if(capsLock){
+                    if(e.target.innerHTML === '&lt;') outStr += '<';
+                    else if(e.target.innerHTML === '&gt;') outStr += '>';
+                    else if(e.target.innerHTML === '&amp;') outStr += '&';
+                    else if(capsLock){
                         outStr += e.target.innerHTML.toUpperCase();
                     } else outStr += e.target.innerHTML;
                     break;
