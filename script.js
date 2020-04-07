@@ -41,7 +41,7 @@ input.setAttribute('readonly', 'readonly');
 document.body.appendChild(infoText);
 document.body.appendChild(input);
 document.body.appendChild(divKeyboard);
-document.querySelector('#infoText').innerHTML = 'Change language: LShift + LAlt';
+document.querySelector('#infoText').innerHTML = 'Change language: LShift + LAlt \n OS: MacOS';
 
 window.onload = function() {
     document.body.setAttribute('onkeydown', 'if(event.keyCode==9) return false;');
