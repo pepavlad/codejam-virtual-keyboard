@@ -27,9 +27,8 @@ const specialKeys = ['CapsLock', 'Backspace', 'Tab', 'Enter', 'ShiftLeft',
     'MetaRight', 'ArrowLeft', 'ArrowRight', 'ArrowDown'];
 
 const changingKeys = ['BracketLeft','BracketRight', 'Backslash', 'Semicolon', 'Quote', 'Comma', 'Period', 'Slash', 'IntlBackslash'];
-const firstRow = ['Digit1','Digit2','Digit3','Digit4','Digit5','Digit6','Digit7','Digit8','Digit9','Digit0', 'Minus', 'Equal']
+const firstRow = ['Digit1','Digit2','Digit3','Digit4','Digit5','Digit6','Digit7','Digit8','Digit9','Digit0', 'Minus', 'Equal'];
 const alphabet = ["KeyQ", "KeyW", "KeyE", "KeyR", "KeyT", "KeyY", "KeyU", "KeyI", "KeyO", "KeyP", "KeyA", "KeyS", "KeyD", "KeyF", "KeyG", "KeyH", "KeyJ", "KeyK", "KeyL", "KeyZ", "KeyX", "KeyC", "KeyV", "KeyB", "KeyN", "KeyM"];
-
 
 const input = document.createElement('textarea');
 const divKeyboard = document.createElement('div');
@@ -55,43 +54,43 @@ window.onload = function() {
 
     function init(keyboardKeys){
         let out = '';
-        out += '<div class="key" id="IntlBackslash">' + keyboardKeys[0] + '</div>';
+        out += `<div class="key" id="IntlBackslash">${keyboardKeys[0]}</div>`;
         for(let i = 1; i < 13; i++){
-            out += '<div class="key" id="' + firstRow[i - 1] + '">' + keyboardKeys[i] + '</div>';
+            out += `<div class="key" id="${firstRow[i - 1]}">${keyboardKeys[i]}</div>`;
         }
-        out += '<div class="key" id="Backspace">' + keyboardKeys[13] + '</div>';
-        out += '<div class="key" id="Tab">' + keyboardKeys[14] + '</div>';
+        out += `<div class="key" id="Backspace">${keyboardKeys[13]}</div>`;
+        out += `<div class="key" id="Tab">${keyboardKeys[14]}</div>`;
         for(let i = 0; i < 10; i++){
-            out += '<div class="key" id="' + alphabet[i] + '">' + keyboardKeys[i+15] + '</div>';
+            out += `<div class="key" id="${alphabet[i]}">${keyboardKeys[i+15]}</div>`;
         }
-        out += '<div class="key" id="BracketLeft">' + keyboardKeys[25] + '</div>';
-        out += '<div class="key" id="BracketRight">' + keyboardKeys[26] + '</div>';
+        out += `<div class="key" id="BracketLeft">${keyboardKeys[25]}</div>`;
+        out += `<div class="key" id="BracketRight">${keyboardKeys[26]}</div>`;
         out += '<div class="key" id="Backslash">\\</div>';
-        out += '<div class="key" id="CapsLock">' + keyboardKeys[28] + '</div>';
+        out += `<div class="key" id="CapsLock">${keyboardKeys[28]}</div>`;
         for(let i = 0; i < 9; i++){
-            out += '<div class="key" id="' + alphabet[i + 10] + '">' + keyboardKeys[i + 29] + '</div>';
+            out += `<div class="key" id="${alphabet[i + 10]}">${keyboardKeys[i + 29]}</div>`;
         }
-        out += '<div class="key" id="Semicolon">' + keyboardKeys[38] + '</div>';
-        out += '<div class="key" id="Quote">' + keyboardKeys[39] + '</div>';
-        out += '<div class="key" id="Enter">' + keyboardKeys[40] + '</div>';
+        out += `<div class="key" id="Semicolon">${keyboardKeys[38]}</div>`;
+        out += `<div class="key" id="Quote">${keyboardKeys[39]}</div>`;
+        out += `<div class="key" id="Enter">${keyboardKeys[40]}</div>`;
         out += '<div class="key" id="ShiftLeft">Shift</div>';
         for(let i = 0; i < 7; i++){
             out += '<div class="key" id="' + alphabet[i + 19] + '">' + keyboardKeys[i + 41] + '</div>';
         }
-        out += '<div class="key" id="Comma">' + keyboardKeys[48] + '</div>';
-        out += '<div class="key" id="Period">' + keyboardKeys[49] + '</div>';
-        out += '<div class="key" id="Slash">' + keyboardKeys[50] + '</div>';
+        out += `<div class="key" id="Comma">${keyboardKeys[48]}</div>`;
+        out += `<div class="key" id="Period">${keyboardKeys[49]}</div>`;
+        out += `<div class="key" id="Slash">${keyboardKeys[50]}</div>`;
         out += '<div class="key" id="ShiftRight">Shift</div>';
-        out += '<div class="key" id="ControlLeft">' + keyboardKeys[52] + '</div>';
-        out += '<div class="key" id="MetaLeft">' + keyboardKeys[53] + '</div>';
+        out += `<div class="key" id="ControlLeft">${keyboardKeys[52]}</div>`;
+        out += `<div class="key" id="MetaLeft">${keyboardKeys[53]}</div>`;
         out += '<div class="key" id="AltLeft">Alt</div>';
-        out += '<div class="key" id="Space">' + keyboardKeys[54] + '</div>';
+        out += `<div class="key" id="Space">${keyboardKeys[54]}</div>`;
         out += '<div class="key" id="MetaRight">Win</div>';
         out += '<div class="key" id="AltRight">Alt</div>';
-        out += '<div class="key" id="ArrowLeft">' + keyboardKeys[56] + '</div>';       
-        out += '<div class="key" id="ArrowUp">' + keyboardKeys[51] + '</div>';
-        out += '<div class="key" id="ArrowDown">' + keyboardKeys[57] + '</div>';
-        out += '<div class="key" id="ArrowRight">' + keyboardKeys[58] + '</div>';
+        out += `<div class="key" id="ArrowLeft">${keyboardKeys[56]}</div>`;       
+        out += `<div class="key" id="ArrowUp">${keyboardKeys[51]}</div>`;
+        out += `<div class="key" id="ArrowDown">${keyboardKeys[57]}</div>`;
+        out += `<div class="key" id="ArrowRight">${keyboardKeys[58]}</div>`;
         document.querySelector('#keyboard').innerHTML = out;
         }
 
@@ -151,8 +150,8 @@ window.onload = function() {
             if(event.code === changingKeys[i]){
                 document.getElementById(changingKeys[i]).classList.add('pressed');
                 if(!capsLock) {
-                    if(event.key == '<' && isEng) outStr += '<';
-                    else if(event.key == '>' && isEng) outStr += '>';
+                    if(event.key === '<' && isEng) outStr += '<';
+                    else if(event.key === '>' && isEng) outStr += '>';
                     else outStr += document.getElementById(changingKeys[i]).innerHTML;
                 }
                     else outStr += document.getElementById(changingKeys[i]).innerHTML.toUpperCase();
@@ -284,4 +283,4 @@ window.onload = function() {
     window.addEventListener('beforeunload', () => {
         localStorage.setItem('isEng', isEng);
       });
-}
+};
